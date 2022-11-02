@@ -11,11 +11,11 @@
     <title>Plasma - Donation</title>
 
     <!-- CSS FILES -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/styles.css') }}">
 
-    <link href="css/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/bootstrap-icons.css') }}">
 
-    <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/bootstrap.min.css') }}">
    
 </head>
 
@@ -70,8 +70,8 @@
 
     <nav class="navbar navbar-expand-lg bg-light shadow-lg">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="images/logo.png" class="logo img-fluid" alt="">
+            <a class="navbar-brand" href="/home">
+                <img src="{{ url_for('static', filename= 'images/logo.png') }}" class="logo img-fluid" alt="">
                 <span>
                     Plasma Donor Application
                     <small>Non-profit Organization</small>
@@ -86,27 +86,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link click-scroll" href="index.html#section_1">Home</a>
+                        <a class="nav-link click-scroll" href="/home">Home</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link click-scroll" href="index.html#section_2">About</a>
+                        <a class="nav-link click-scroll" href="/home">About</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link click-scroll" href="index.html#section_3">Causes</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link click-scroll" href="index.html#section_4">Volunteer</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link click-scroll" href="index.html#section_6">Contact</a>
+                        <a class="nav-link click-scroll" href="/home">Contact</a>
                     </li>
 
                     <li class="nav-item ms-3">
-                        <a class="nav-link custom-btn custom-border-btn btn" href="donate.html">Donate</a>
+                        <a class="nav-link custom-btn custom-border-btn btn" href="/donate">Donate</a>
                     </li>
                 </ul>
             </div>
@@ -287,7 +279,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-12 mb-4">
-                    <img src="images/logo.png" class="logo img-fluid" alt="">
+                    <img src="{{ url_for('static', filename= 'images/logo.png') }}" class="logo img-fluid" alt="">
                 </div>
 
                 <div class="col-lg-4 col-md-6 col-12 mb-4">
@@ -338,7 +330,7 @@
                 <div class="row">
 
                     <div class="col-lg-6 col-md-7 col-12">
-                        <p class="copyright-text mb-0">Copyright © 2036 <a href="#">Plasma</a> Donation Org.
+                        <p class="copyright-text mb-0">Copyright © 2023 <a href="#">Plasma</a> Donation Org.
                         </p>
                     </div>
 
@@ -372,11 +364,12 @@
     </footer>
 
     <!-- JAVASCRIPT FILES -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.sticky.js"></script>
-    <script src="js/counter.js"></script>
-    <script src="js/custom.js"></script>
+    <script src="{{ url_for('static', filename= 'js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename= 'js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename= 'js/jquery.sticky.js') }}"></script>
+    <script src="{{ url_for('static', filename= 'js/click-scroll.js') }}"></script>
+    <script src="{{ url_for('static', filename= 'js/counter.js') }}"></script>
+    <script src="{{ url_for('static', filename= 'js/custom.js') }}"></script>
 
 </body>
 
