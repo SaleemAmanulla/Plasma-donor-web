@@ -15,7 +15,10 @@ btn {
   border-radius: 0
 }
 
-
+.viola{
+	color: rgb(139, 3, 139) !important;
+	text-decoration: none  !important;
+}
 
 .btn-larger {
 	padding: 15px 40px !important;
