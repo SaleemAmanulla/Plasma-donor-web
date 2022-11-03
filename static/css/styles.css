@@ -1,6 +1,12 @@
 *{
   text-decoration: none !important;
 }
+
+.bg-light {
+  --bs-bg-opacity: 0;
+  background-color: white !important ;
+}
+
 @font-face {
     font-family: 'Metropolis';
     src: url('../fonts/Metropolis/Metropolis-Regular.woff2') format('woff2'),
