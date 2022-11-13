@@ -13,3 +13,11 @@ def donate():
 @app.route("/home")
 def home():
     return render_template('index.html')
+
+@app.route("/adminLogin")
+def adminlogin():
+    return render_template('Admin/adminLogin.html')
+
+@app.route("/adminindex")
+def adminindex():
+    return render_template('Admin/adminindex.html')

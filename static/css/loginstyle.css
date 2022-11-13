@@ -20,6 +20,32 @@ btn {
 	text-decoration: none  !important;
 }
 
+.btn-admin{
+	padding: 15px 40px !important;
+	border-radius: 0px !important;;
+	text-transform: uppercase;
+	font-family: 'Dosis', sans-serif;
+	font-size: 20px;
+	font-weight: 600;
+	
+	background-color:rgba(0, 0, 0, 0.732);
+	-webkit-transition: all .6s;
+	-moz-transition: all .6s;
+	transition: all .6s;
+}
+
+.btn-admin:hover{
+	background-color: #F7CA18;
+	
+}
+
+.btn-admin>a{
+	text-decoration: none;
+	color: white !important;
+	
+}
+
+
 .btn-larger {
 	padding: 15px 40px !important;
 	border:2px solid #F7CA18 !important;;
@@ -33,9 +59,9 @@ btn {
 	-webkit-transition: all .6s;
 	-moz-transition: all .6s;
 	transition: all .6s;
-  
-
+	
 }
+
 .btn-larger:hover, .btn-larger:focus, .btn-larger:active, .btn-larger.active, .open .dropdown-toggle.btn-larger {
 	border-color: #F7CA18;
 	color: #fff;
