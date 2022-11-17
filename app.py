@@ -60,10 +60,49 @@ def login():
 def home():
     return render_template('index.html')
 
-@app.route("/adminLogin")
+@app.route("/adminLogin",  methods=['GET', 'POST'])
 def adminlogin():
-    return render_template('Admin/adminLogin.html')
+    error = None
+    if request.method == 'POST':
+        username = request.form['uname']
+        password = request.form['password']
+
+
+        conn = ibm_db.connect(dsn, "", "")
+        pd_conn = ibm_db_dbi.Connection(conn)
+
+        selectQuery = "SELECT * from admindb where LASTNAME='" + username + "' and FIRSTNAME='" + password + "'"
+        dataframe = pandas.read_sql(selectQuery, pd_conn)
+
+        if dataframe.empty:
+            data1 = 'Username or Password is wrong'
+            return render_template('goback.html', data=data1)
+        else:
+            print("Login")
+            selectQuery = "SELECT * from regtb "
+            dataframe = pandas.read_sql(selectQuery, pd_conn)
+
+            dataframe.to_sql('Employee_Data', con=engine,if_exists='append')
+
+            # run a sql query
+            print(engine.execute("SELECT * FROM Employee_Data").fetchall())
+
+            return render_template('AdminHome.html', data=engine.execute("SELECT * FROM Employee_Data").fetchall())
+
 
 @app.route("/adminindex")
 def adminindex():
-    return render_template('Admin/adminindex.html')
+    conn = ibm_db.connect(dsn, "", "")
+    pd_conn = ibm_db_dbi.Connection(conn)
+
+    selectQuery = "SELECT * from regtb "
+    dataframe = pandas.read_sql(selectQuery, pd_conn)
+
+    dataframe.to_sql('Employee_Data',
+                     con=engine,
+                     if_exists='append')
+
+    # run a sql query
+    data = engine.execute("SELECT * FROM Employee_Data").fetchall()
+
+    return render_template('Admin/adminindex.html' , data=data)
