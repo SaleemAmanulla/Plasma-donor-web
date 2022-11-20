@@ -60,6 +60,10 @@ def login():
 def home():
     return render_template('index.html')
 
+@app.route("/login1")
+def home1():
+    return render_template('login.html')
+
 @app.route("/AdminLogin",  methods=['GET', 'POST'])
 def adminlogin():
     return render_template("Admin/adminlogin.html")
